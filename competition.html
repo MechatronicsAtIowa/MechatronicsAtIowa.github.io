@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" sizes="32x32" href="Logos/Mechatronics 32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="Logos/Mechatronics 16.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A student-written overview of RoboMasters, robot roles, field planning, and the PCB and electronics work behind a competition robot.">
+  <title>RoboMasters | Mechatronics at Iowa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="competition.css">
+</head>
+
+<body>
+  <header class="site-header competition-header">
+    <a class="brand" href="index.html" aria-label="Mechatronics at Iowa home">
+      <img src="Logos/Mechatronics Logo PNG.png" alt="Mechatronics at Iowa winged gear logo">
+      <span>MECHATRONICS<br><b>AT IOWA</b></span>
+    </a>
+
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      MENU <span></span>
+    </button>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html#mission">Why us</a>
+      <a class="active" href="competition.html">RoboMasters</a>
+      <a href="index.html#build">The build</a>
+      <a href="index.html#sponsors">Sponsors</a>
+      <a class="nav-cta" href="index.html#join">
+        Join the founding group <span>↗</span>
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="competition-hero section-grid">
+      <div class="competition-hero-copy">
+        <p class="eyebrow">
+          <span class="status-dot"></span>
+          RoboMasters · our competition page
+        </p>
+
+        <h1>What are we<br><em>building for?</em></h1>
+
+        <p>
+          RoboMasters is a robotics competition where teams design, build,
+          drive, and repair robots during matches. This is our quick guide
+          to the game and the work behind it.
+        </p>
+      </div>
+
+      <div class="arena-diagram">
+        <div class="arena-box">
+          <span class="zone zone-a">A</span>
+          <span class="zone zone-b">B</span>
+          <span class="center-mark">RM</span>
+          <span class="target target-one"></span>
+          <span class="target target-two"></span>
+        </div>
+
+        <span class="diagram-label diagram-top">NORTH AMERICA / 3V3</span>
+        <span class="diagram-label diagram-bottom">FIELD STUDY 001</span>
+      </div>
+
+      <div class="hero-foot">
+        <span>COMPETITION GUIDE</span>
+        <span class="line"></span>
+        <span>01 / 04</span>
+      </div>
+    </section>
+
+    <section class="competition-video-intro">
+      <video class="competition-video-bg" autoplay muted loop playsinline>
+        <source src="Content/Other Team_Comp Photos/Comp Introduction.mp4" type="video/mp4">
+      </video>
+
+      <div class="competition-video-overlay"></div> 
+      <h2 class="competition-video-title"><u>INTRODUCTION</u></h2>
+      
+      <div class="competition-video-frame">
+        <video autoplay muted loop playsinline>
+          <source src="Content/Other Team_Comp Photos/Comp Introduction.mp4" type="video/mp4">
+        </video>
+      </div>
+    </section>
+
+    <section class="route-section section-grid">
+      <div class="section-index">01 <span>/</span> TWO STAGES</div>
+
+      <div class="route-heading">
+        <p class="eyebrow">Our goals</p>
+        <h2>The<br>competitions:</h2>
+      </div>
+
+      <div class="route-card route-local">
+        <span class="route-number">01</span>
+        <p class="eyebrow">Our first target · ARC</p>
+        <h3>North America<br>3v3</h3>
+
+        <p>
+          Three robots on each side work together. It is a good first goal
+          because we can focus on the basics: a robot that drives well,
+          a shooter that works, and a team that can fix problems.
+        </p>
+
+        <a class="route-card-link" href="index.html#join">
+          Get involved now →
+        </a>
+      </div>
+
+      <div class="route-card route-china">
+        <span class="route-number">02</span>
+        <p class="eyebrow">A longer-term goal</p>
+        <h3>University<br>Championship</h3>
+
+        <p>
+          The larger international event is something to work toward later.
+          It would mean a series of more advanced robots, more testing,
+          and a lot more travel and planning.
+        </p>
+
+        <a
+          class="route-card-link"
+          href="https://www.robomaster.com/en-US"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Learn about the competition →
+        </a>
+      </div>
+    </section>
+
+    <section class="roles-section">
+      <div class="competition-section-heading">
+        <div class="section-index">
+          02 <span>/</span> KNOW YOUR ROBOTS
+        </div>
+
+        <div class="competition-section-title">
+          <p class="eyebrow">The lineup</p>
+          <h2>Different roles,<br><em>One team</em></h2>
+        </div>
+
+        <p class="competition-section-description">
+          The exact rules change from season to season. These roles are a
+          useful way to understand what the robots do on the field.
+        </p>
+      </div>
+
+      <div class="role-grid">
+
+        <article class="role-card role-hero">
+          <div class="role-photo">
+            <img src="Content/Robot Types/hero.png" alt="RoboMasters Hero robot">
+          </div>
+          <span class="role-code">HERO / 01</span>
+          <h3>Hero</h3>
+          <p>
+            A larger robot that can do serious damage, but usually needs
+            a lot of power and careful driving.
+          </p>
+        </article>
+
+        <article class="role-card role-infantry">
+          <div class="role-photo">
+            <img src="Content/Robot Types/infantry.jpg" alt="RoboMasters Infantry robot">
+          </div>
+          <span class="role-code">INFANTRY / 02</span>
+          <h3>Infantry</h3>
+          <p>
+            A fast, mobile robot that moves quickly around the field. 
+            It needs to be quick, accurate, and easy to control.
+          </p>
+        </article>
+
+        <article class="role-card role-engineer">
+          <div class="role-photo">
+            <img src="Content/Robot Types/engineer.png" alt="RoboMasters Engineer robot">
+          </div>
+          <span class="role-code">ENGINEER / 03</span>
+          <h3>Engineer</h3>
+          <p>
+            Works with field mechanisms and recovery tasks. A good engineer
+            can keep a match from falling apart.
+          </p>
+        </article>
+
+        <article class="role-card role-aerial">
+          <div class="role-photo">
+            <img src="Content/Robot Types/aerial.png" alt="RoboMasters Drone robot">
+          </div>
+          <span class="role-code">DRONE / 04</span>
+          <h3>Drone</h3>
+          <p>
+            Uses a flying view to help with scouting and support. It adds
+            another route for approaching the challenge.
+          </p>
+        </article>
+
+        <article class="role-card role-sentry">
+          <div class="role-photo">
+            <img src="Content/Robot Types/sentry.png" alt="RoboMasters Sentry robot">
+          </div>
+          <span class="role-code">SENTRY / 05</span>
+          <h3>Sentry</h3>
+          <p>
+            A defensive robot that watches an area and helps protect
+            important parts of the field, without any human assistance.
+          </p>
+        </article>
+
+        <article class="role-card role-base">
+          <div class="role-photo">
+            <img src="Content/Robot Types/base-outpost.jpg" alt="RoboMasters competition arena">
+          </div>
+          <span class="role-code">BASE / 06</span>
+          <h3>Base + Dart System</h3>
+          <p>
+            These are the fixed objectives. The field layout gives every
+            robot a reason to move and make a plan.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- FIELD NOTES -->
+    <section class="build-lab">
+      <div class="competition-section-heading">
+
+        <div class="section-index">
+          03 <span>/</span> FIELD NOTES
+        </div>
+
+        <div class="competition-section-title">
+          <p class="eyebrow">Community resources / References</p>
+          <h2>Analyze the<br>competition</h2>
+        </div>
+
+        <p class="competition-section-description">
+          Before we build our own competition system, we study the field,
+          the machines, and the decisions teams make under pressure.
+          These screenshots give the founding group a shared starting point.
+        </p>
+
+      </div>
+
+      <div class="build-lab-content">
+
+        <div class="field-collage" aria-label="RoboMasters field references">
+
+          <figure class="collage-main">
+            <img
+              src="Content/Other Team_Comp Photos/3v3 2025.png"
+              alt="2025 North American RoboMasters 3v3 field screenshot"
+            >
+            <figcaption>
+              01 / NORTH AMERICA 3V3 FIELD · 2025
+            </figcaption>
+          </figure>
+
+          <figure class="collage-archive">
+            <img
+              src="Content/Other Team_Comp Photos/RMUC Field 2021.png"
+              alt="2021 RoboMaster University Championship field screenshot"
+            >
+            <figcaption>
+              02 / RMUC FIELD ARCHIVE · 2021
+            </figcaption>
+          </figure>
+
+          <div class="collage-note">
+            <span>FIELD LAYOUTS</span>
+            <strong>3V3 & RMUC</strong>
+          </div>
+
+        </div>
+
+        <aside class="team-reference">
+          <p class="eyebrow">Other team reference</p>
+
+          <p class="team-reference-copy">
+            Looking at other teams helps us see how a robot can be built
+            and used in a real match. We are using this as a reference,
+            not a blueprint.
+          </p>
+
+          <img
+            src="Content/Other Team_Comp Photos/TAMU Hero 2025.png"
+            alt="Texas A&M RoboMaster Hero robot screenshot"
+          >
+
+          <p>03 / TAMU HERO REFERENCE · 2025</p>
+        </aside>
+
+      </div>
+    </section>
+
+    <section class="competition-join section-grid">
+      <p class="eyebrow">05 / YOUR ROLE</p>
+
+      <div>
+        <h2>Get<br><em><u>involved</u></em></h2>
+
+        <p>
+          There is no single way into robotics. Drive, design, code,
+          analyze, document, organize. The first win is finding the work
+          that makes you want to stay late.
+        </p>
+      </div>
+
+      <div class="source-note">
+
+        <div class="competition-role-actions">
+          <a class="button button-dark" href="index.html#join">
+            Join the founding group
+          </a>
+
+          <a
+            class="button button-primary"
+            href="https://uiowa.campuslabs.com/engage/organization/mechatronicsatiowa"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Join us on Engage <span>↗</span>
+          </a>
+        </div>
+
+        <div class="source-links">
+          <span>LEARN MORE</span>
+
+          <a
+            href="https://www.robomaster.com/en-US"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Official RoboMaster site ↗
+          </a>
+
+          <a
+            href="https://uiowa.campuslabs.com/engage/organization/mechatronicsatiowa"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Our Engage page ↗
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand" href="index.html">
+      <img src="Logos/Mechatronics Logo PNG.png" alt="">
+      <span>MECHATRONICS AT IOWA · 2026</span>
+    </a>
+
+    <p>RoboMasters hosted by ARC Robotics</p>
+
+    <a
+      class="footer-link"
+      href="https://uiowa.campuslabs.com/engage/organization/mechatronicsatiowa"
+      target="_blank"
+      rel="noreferrer"
+    >
+      <u>University of Iowa Engage ↗</u>
+    </a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
