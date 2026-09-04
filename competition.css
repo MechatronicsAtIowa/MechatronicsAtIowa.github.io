@@ -20,6 +20,12 @@
   padding: 0 0 0 28px;
 }
 
+.competition-join .section-index {
+  background: var(--ink);
+  color: var(--paper);
+  --badge-accent: var(--paper);
+}
+
 .competition-join .competition-role-actions {
   align-items: stretch;
   margin-top: 0;
@@ -666,6 +672,9 @@
 
 .build-lab .section-index {
   grid-column: 1 / 4;
+  background: var(--yellow);
+  color: var(--ink);
+  --badge-accent: var(--ink);
 }
 
 .build-lab-copy {
@@ -734,7 +743,6 @@
 
 .collage-note {
   align-self: stretch;
-  border: 1px solid var(--yellow);
   background: var(--ink);
   color: var(--paper);
   padding: 18px;
@@ -1359,25 +1367,24 @@
   top: 50%;
   left: 50%;
   display: grid;
-  width: 82px;
-  height: 82px;
-  padding: 0 0 0 5px;
+  width: 76px;
+  height: 52px;
+  padding: 0;
   place-items: center;
   transform: translate(-50%, -50%);
-  border: 2px solid #fff;
-  border-radius: 50%;
-  color: #161616;
+  border: 0;
+  border-radius: 8px;
+  color: #000;
   background: #ffcd00;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, .45);
   cursor: pointer;
-  font-size: 30px;
+  font-size: 24px;
   transition: transform .2s ease, background .2s ease;
 }
 
 .competition-video-play:hover,
 .competition-video-play:focus-visible {
   transform: translate(-50%, -50%) scale(1.08);
-  background: #fff;
+  background: #ffe066;
 }
 
 .competition-video-play.is-hidden {

@@ -29,6 +29,9 @@ document.querySelectorAll('.competition-video-player').forEach((player) => {
 
   playButton.addEventListener('click', () => {
     video.play();
+  });
+
+  video.addEventListener('play', () => {
     playButton.classList.add('is-hidden');
   });
 

@@ -848,6 +848,7 @@ emph {
 .section-index {
   grid-column: 1 / 4;
   display: inline-block;
+  position: relative;
   width: fit-content;
   max-width: none;
   box-sizing: border-box;
@@ -857,14 +858,37 @@ emph {
   padding: 6px 8px;
   background: var(--ink);
   color: var(--paper);
+  --badge-accent: var(--yellow);
   transform: skewX(-10deg);
   font: 600 15px/1.05 var(--display);
   letter-spacing: .03em;
   white-space: nowrap;
 }
 
+.section-index::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -7px;
+  width: 5px;
+  height: 100%;
+  background: var(--badge-accent);
+}
+
 .section-index span {
   color: #aa7b00;
+}
+
+.build .section-index,
+.join .section-index,
+.competition-join .section-index {
+  background: var(--yellow);
+  color: var(--ink);
+  --badge-accent: var(--paper);
+}
+
+.field-collage .section-index {
+  --badge-accent: var(--paper);
 }
 
 .intro-heading,
