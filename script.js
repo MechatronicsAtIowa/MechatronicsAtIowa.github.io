@@ -21,6 +21,26 @@ document.querySelectorAll('.site-nav a').forEach((link) => {
   });
 });
 
+document.querySelectorAll('.competition-video-player').forEach((player) => {
+  const video = player.querySelector('video');
+  const playButton = player.querySelector('.competition-video-play');
+
+  if (!video || !playButton) return;
+
+  playButton.addEventListener('click', () => {
+    video.play();
+    playButton.classList.add('is-hidden');
+  });
+
+  video.addEventListener('pause', () => {
+    playButton.classList.remove('is-hidden');
+  });
+
+  video.addEventListener('ended', () => {
+    playButton.classList.remove('is-hidden');
+  });
+});
+
 document.querySelectorAll('.discipline').forEach((discipline) => {
   const summary = discipline.querySelector('summary');
   const panel = discipline.querySelector('.discipline-panel');

@@ -40,8 +40,7 @@
     <section class="competition-hero section-grid">
       <div class="competition-hero-copy">
         <p class="eyebrow">
-          <span class="status-dot"></span>
-          RoboMasters · our competition page
+          <u>Mechatronics at Iowa</u>
         </p>
 
         <h1>What are we<br><em>building for?</em></h1>
@@ -63,33 +62,46 @@
         </div>
 
         <span class="diagram-label diagram-top">NORTH AMERICA / 3V3</span>
-        <span class="diagram-label diagram-bottom">FIELD STUDY 001</span>
+        <span class="diagram-label diagram-bottom">FIELD STUDY</span>
       </div>
 
       <div class="hero-foot">
         <span>COMPETITION GUIDE</span>
         <span class="line"></span>
-        <span>01 / 04</span>
       </div>
     </section>
 
     <section class="competition-video-intro">
-      <video class="competition-video-bg" autoplay muted loop playsinline>
+      <video class="competition-video-bg" autoplay muted loop playsinline aria-hidden="true">
         <source src="Content/Other Team_Comp Photos/Comp Introduction.mp4" type="video/mp4">
       </video>
 
       <div class="competition-video-overlay"></div> 
       <h2 class="competition-video-title"><u>INTRODUCTION</u></h2>
       
-      <div class="competition-video-frame">
-        <video autoplay muted loop playsinline>
-          <source src="Content/Other Team_Comp Photos/Comp Introduction.mp4" type="video/mp4">
-        </video>
+      <div class="competition-video-players">
+        <div class="competition-video-player">
+          <video controls playsinline preload="metadata">
+            <source src="Content/Other Team_Comp Photos/Comp Introduction.mp4" type="video/mp4">
+          </video>
+          <button class="competition-video-play" type="button" aria-label="Play introduction video">
+            <span aria-hidden="true">&#9654;</span>
+          </button>
+        </div>
+
+        <div class="competition-video-player">
+          <video controls playsinline preload="metadata">
+            <source src="Content/Other Team_Comp Photos/RoboMaster RMUL 2021, 3v3 Competition Rule.mp4" type="video/mp4">
+          </video>
+          <button class="competition-video-play" type="button" aria-label="Play RoboMaster rules video">
+            <span aria-hidden="true">&#9654;</span>
+          </button>
+        </div>
       </div>
     </section>
 
     <section class="route-section section-grid">
-      <div class="section-index">01 <span>/</span> TWO STAGES</div>
+      <div class="section-index">TWO STAGES</div>
 
       <div class="route-heading">
         <p class="eyebrow">Our goals</p>
@@ -97,7 +109,6 @@
       </div>
 
       <div class="route-card route-local">
-        <span class="route-number">01</span>
         <p class="eyebrow">Our first target · ARC</p>
         <h3>North America<br>3v3</h3>
 
@@ -113,7 +124,6 @@
       </div>
 
       <div class="route-card route-china">
-        <span class="route-number">02</span>
         <p class="eyebrow">A longer-term goal</p>
         <h3>University<br>Championship</h3>
 
@@ -136,9 +146,7 @@
 
     <section class="roles-section">
       <div class="competition-section-heading">
-        <div class="section-index">
-          02 <span>/</span> KNOW YOUR ROBOTS
-        </div>
+        <div class="section-index">ROBOTS</div>
 
         <div class="competition-section-title">
           <p class="eyebrow">The lineup</p>
@@ -157,7 +165,7 @@
           <div class="role-photo">
             <img src="Content/Robot Types/hero.png" alt="RoboMasters Hero robot">
           </div>
-          <span class="role-code">HERO / 01</span>
+          <span class="role-code">HERO</span>
           <h3>Hero</h3>
           <p>
             A larger robot that can do serious damage, but usually needs
@@ -169,7 +177,7 @@
           <div class="role-photo">
             <img src="Content/Robot Types/infantry.jpg" alt="RoboMasters Infantry robot">
           </div>
-          <span class="role-code">INFANTRY / 02</span>
+          <span class="role-code">INFANTRY</span>
           <h3>Infantry</h3>
           <p>
             A fast, mobile robot that moves quickly around the field. 
@@ -181,7 +189,7 @@
           <div class="role-photo">
             <img src="Content/Robot Types/engineer.png" alt="RoboMasters Engineer robot">
           </div>
-          <span class="role-code">ENGINEER / 03</span>
+          <span class="role-code">ENGINEER</span>
           <h3>Engineer</h3>
           <p>
             Works with field mechanisms and recovery tasks. A good engineer
@@ -193,7 +201,7 @@
           <div class="role-photo">
             <img src="Content/Robot Types/aerial.png" alt="RoboMasters Drone robot">
           </div>
-          <span class="role-code">DRONE / 04</span>
+          <span class="role-code">DRONE</span>
           <h3>Drone</h3>
           <p>
             Uses a flying view to help with scouting and support. It adds
@@ -205,7 +213,7 @@
           <div class="role-photo">
             <img src="Content/Robot Types/sentry.png" alt="RoboMasters Sentry robot">
           </div>
-          <span class="role-code">SENTRY / 05</span>
+          <span class="role-code">SENTRY</span>
           <h3>Sentry</h3>
           <p>
             A defensive robot that watches an area and helps protect
@@ -217,7 +225,7 @@
           <div class="role-photo">
             <img src="Content/Robot Types/base-outpost.jpg" alt="RoboMasters competition arena">
           </div>
-          <span class="role-code">BASE / 06</span>
+          <span class="role-code">BASE</span>
           <h3>Base + Dart System</h3>
           <p>
             These are the fixed objectives. The field layout gives every
@@ -232,9 +240,7 @@
     <section class="build-lab">
       <div class="competition-section-heading">
 
-        <div class="section-index">
-          03 <span>/</span> FIELD NOTES
-        </div>
+        <div class="section-index">FIELD NOTES</div>
 
         <div class="competition-section-title">
           <p class="eyebrow">Community resources / References</p>
@@ -259,7 +265,7 @@
               alt="2025 North American RoboMasters 3v3 field screenshot"
             >
             <figcaption>
-              01 / NORTH AMERICA 3V3 FIELD · 2025
+              NORTH AMERICA 3V3 FIELD · 2025
             </figcaption>
           </figure>
 
@@ -269,7 +275,7 @@
               alt="2021 RoboMaster University Championship field screenshot"
             >
             <figcaption>
-              02 / RMUC FIELD ARCHIVE · 2021
+              RMUC FIELD ARCHIVE · 2021
             </figcaption>
           </figure>
 
@@ -294,14 +300,14 @@
             alt="Texas A&M RoboMaster Hero robot screenshot"
           >
 
-          <p>03 / TAMU HERO REFERENCE · 2025</p>
+          <p>TAMU HERO REFERENCE · 2025</p>
         </aside>
 
       </div>
     </section>
 
     <section class="competition-join section-grid">
-      <p class="eyebrow">05 / YOUR ROLE</p>
+      <p class="section-index">YOUR ROLE</p>
 
       <div>
         <h2>Get<br><em><u>involved</u></em></h2>

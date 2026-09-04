@@ -133,7 +133,8 @@
 
 .competition-section-heading .section-index {
   grid-column: 1;
-  width: 105px;
+  width: fit-content;
+  max-width: 150px;
   margin: 0;
   line-height: 1.35;
 }
@@ -212,8 +213,12 @@
   .competition-section-title,
   .competition-section-description {
     grid-column: 1;
-    width: auto;
-    padding-left: 0;
+  }
+
+  .competition-section-heading .section-index {
+    width: fit-content;
+    max-width: none;
+    padding-left: 10px;
   }
 
   .competition-section-title {
@@ -1320,33 +1325,81 @@
   background: rgba(255, 185, 45, .274);
 }
 
-.competition-video-frame {
+.competition-video-players {
   position: relative;
   z-index: 2;
-  width: min(82%, 1100px);
+  width: min(94%, 1500px);
   height: 78%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.competition-video-player {
+  position: relative;
+  min-width: 0;
   overflow: hidden;
   border: 5px solid rgba(255, 205, 0, .8);
   box-shadow: 0 50px 50px rgba(0, 0, 0, .688);
   background: #111;
 }
 
-.competition-video-frame video {
+.competition-video-player video,
+.competition-video-player iframe {
   width: 100%;
   height: 100%;
   display: block;
   object-fit: cover;
+  border: 0;
+  background: #111;
+}
+
+.competition-video-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  width: 82px;
+  height: 82px;
+  padding: 0 0 0 5px;
+  place-items: center;
+  transform: translate(-50%, -50%);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #161616;
+  background: #ffcd00;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .45);
+  cursor: pointer;
+  font-size: 30px;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.competition-video-play:hover,
+.competition-video-play:focus-visible {
+  transform: translate(-50%, -50%) scale(1.08);
+  background: #fff;
+}
+
+.competition-video-play.is-hidden {
+  display: none;
 }
 
 @media (max-width: 700px) {
   .competition-video-intro {
-    height: 55vh;
-    min-height: 360px;
+    height: auto;
+    min-height: 0;
+    padding: 92px 0 58px;
   }
 
-  .competition-video-frame {
+  .competition-video-players {
     width: 95%;
-    height: 80%;
+    height: auto;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .competition-video-player {
+    aspect-ratio: 16 / 9;
   }
 }
 
