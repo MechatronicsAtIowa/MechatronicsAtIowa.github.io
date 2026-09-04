@@ -34,7 +34,7 @@ This repository is configured as a project site for `MechatronicsAtIowa`.
 2. In GitHub, open **Settings > Pages**.
 3. Under **Build and deployment**, choose **Deploy from a branch**.
 4. Select `main` and `/ (root)`, then choose **Save**.
-5. Visit `[https:///](https://MechatronicsAtIowa.github.io)` after GitHub finishes publishing.
+5. Visit `[https://MechatronicsAtIowa.github.io]` after GitHub finishes publishing.
 
 The site uses relative paths, so it works from the repository subpath. The `.nojekyll` file tells GitHub Pages to serve the files as a plain static site.
 
