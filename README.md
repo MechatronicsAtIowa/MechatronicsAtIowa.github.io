@@ -2,7 +2,7 @@
 
 The public website for Mechatronics at Iowa, a University of Iowa student organization building toward RoboMaster competition.
 
-Live site: [ayarfox.github.io/MechAtIowa](https://ayarfox.github.io/MechAtIowa/)
+Live site: [MechatronicsAtIowa.github.io](https://MechatronicsAtIowa.github.io)
 
 ## Project Structure
 
