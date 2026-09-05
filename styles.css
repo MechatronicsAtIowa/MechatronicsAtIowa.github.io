@@ -2221,6 +2221,16 @@ h2 {
     text-align: center;
   }
 
+  body .season-label {
+    width: 100%;
+    justify-content: center;
+    transform: none;
+  }
+
+  body .season-typed {
+    transform: translateX(3px);
+  }
+
   body .hero h1 + .hero-subtitle {
     margin-top: 0;
     margin-bottom: 110px;
