@@ -9,6 +9,47 @@ const updateHeader = () => {
 updateHeader();
 window.addEventListener('scroll', updateHeader, { passive: true });
 
+document.querySelectorAll('[data-type-text]').forEach((typedText) => {
+  const text = typedText.dataset.typeText;
+  const typewriter = typedText.parentElement;
+  const delay = Number(typewriter.dataset.typeDelay || 0);
+  const reducedMotion = window.matchMedia('(max-width: 700px), (prefers-reduced-motion: reduce)').matches;
+
+  const complete = () => {
+    typedText.textContent = text;
+    typewriter.classList.remove('is-typing');
+  };
+
+  if (reducedMotion) {
+    complete();
+    return;
+  }
+
+  let characterIndex = 0;
+  const typeNextCharacter = () => {
+    typedText.textContent = text.slice(0, characterIndex + 1);
+    characterIndex += 1;
+
+    if (characterIndex === text.length) {
+      typewriter.classList.remove('is-typing');
+      return;
+    }
+
+    window.setTimeout(typeNextCharacter, 75);
+  };
+
+  const startTyping = () => window.setTimeout(() => {
+    typewriter.classList.add('is-typing');
+    typeNextCharacter();
+  }, delay);
+
+  if (document.fonts) {
+    document.fonts.ready.then(startTyping);
+  } else {
+    startTyping();
+  }
+});
+
 menuToggle.addEventListener('click', () => {
   const isOpen = siteNav.classList.toggle('open');
   menuToggle.setAttribute('aria-expanded', String(isOpen));

@@ -386,7 +386,22 @@
   color: var(--yellow);
 }
 
+.competition-hero .eyebrow,
+.competition-hero .eyebrow u,
+.diagram-label,
+.competition-hero .hero-foot {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+}
+
+.competition-hero .eyebrow u {
+  text-decoration: none;
+}
+
 .competition-hero h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  letter-spacing: .02em;
   margin-bottom: 34px;
 }
 

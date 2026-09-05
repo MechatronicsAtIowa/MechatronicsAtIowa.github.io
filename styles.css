@@ -574,15 +574,61 @@ a {
   white-space: nowrap;
 }
 
+.hero-mechanical {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  font-family: 'Orbitron', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: -.03em;
+  text-transform: uppercase;
+  vertical-align: bottom;
+  white-space: nowrap;
+  width: 13ch;
+}
+
+.hero-typed {
+  white-space: nowrap;
+}
+
+.hero-mechanical::after {
+  width: 2px;
+  height: 1em;
+  margin-left: 3px;
+  background: currentColor;
+  content: '';
+  opacity: 0;
+}
+
+.hero-mechanical.is-typing::after {
+  opacity: 1;
+  animation: hero-cursor .7s step-end infinite;
+}
+
+.hero-mechatronics {
+  font-size: .70em;
+}
+
+.hero-at {
+  font-size: .62em;
+  width: 2ch;
+}
+
 .iowa-wordmark {
   display: inline-block;
   color: #ffcd00;
   font-family: 'Zilla Slab', Georgia, serif;
-  font-size: 1.04em;
+  font-size: .94em;
   font-weight: 700;
   letter-spacing: -.06em;
   line-height: .8;
   -webkit-text-stroke: 3px black;
+}
+
+@keyframes hero-cursor {
+  50% { opacity: 0; }
 }
 
 .site-nav {
@@ -687,9 +733,42 @@ h1 {
 
 h1 + .hero-subtitle {
   margin: -18px 0 30px;
-  color: var(--yellow);
+  color: #b59618;
   font: 500 clamp(22px, 2.6vw, 38px)/1 var(--display);
   letter-spacing: -.04em;
+  min-height: 1em;
+}
+
+.season-label {
+  display: inline-flex;
+  align-items: center;
+  color: #c2a12a;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: .78em;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  width: 13ch;
+  height: 1em;
+  line-height: 1;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  vertical-align: top;
+}
+
+.season-label::after {
+  width: 2px;
+  height: 1em;
+  margin-left: 4px;
+  background: currentColor;
+  content: '';
+  opacity: 0;
+}
+
+.season-label.is-typing::after {
+  opacity: 1;
+  animation: hero-cursor .7s step-end infinite;
 }
 
 h1 em,
@@ -817,6 +896,13 @@ emph {
 .label-bottom {
   bottom: 8%;
   left: -3%;
+}
+
+@media (min-width: 701px) {
+  .label-bottom {
+    left: auto;
+    right: -3%;
+  }
 }
 
 .hero-foot {
@@ -1065,8 +1151,12 @@ h2 {
 }
 
 .discipline h3 {
+  font-family: 'Rajdhani', sans-serif;
   font-size: 20px;
+  font-weight: 700;
+  letter-spacing: .03em;
   margin: 0;
+  text-transform: uppercase;
 }
 
 .discipline p {
@@ -1296,6 +1386,14 @@ h2 {
   padding: 5px 7px;
   font: 500 9px var(--mono);
   letter-spacing: .1em;
+}
+
+.visual-label,
+.section-index,
+.field-image figcaption,
+.other-photo-grid figcaption {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
 }
 
 .field-notes {
@@ -1767,8 +1865,30 @@ h2 {
 
 @media (max-width: 700px) {
   body .hero h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-size: clamp(30px, 15vw, 90px);
     text-align: center;
+  }
+
+  body .hero h1 > br {
+    display: none;
+  }
+
+  .hero-iowa-line {
+    display: flex;
+    align-items: baseline;
+    gap: .18em;
+  }
+
+  .hero-mechatronics {
+    font-size: .64em;
+    width: min(13ch, calc(100vw - 48px));
+  }
+
+  .hero-mechanical {
+    justify-content: center;
   }
 
   body .hero-subtitle {
