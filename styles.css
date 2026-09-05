@@ -274,21 +274,45 @@ body .join {
   }
 
   body .hero {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     min-height: 0;
-    padding-top: 104px;
+    padding-top: 78px;
     padding-bottom: 78px;
+    align-items: start;
   }
 
   body .hero-copy {
+    display: contents;
     width: 100%;
     padding-bottom: 0;
   }
 
   body .hero-copy .eyebrow {
+    grid-column: 1 / 5;
+    grid-row: 1;
     text-align: center;
-    margin-bottom: 170px;
+    margin-bottom: 52px;
+  }
+
+  body .hero h1 {
+    grid-column: 1 / 5;
+    grid-row: 3;
+  }
+
+  body .hero h1 + .hero-subtitle {
+    grid-column: 1 / 5;
+    grid-row: 4;
+  }
+
+  body .hero-lede {
+    grid-column: 1 / 5;
+    grid-row: 5;
+  }
+
+  body .hero-actions {
+    grid-column: 1 / 5;
+    grid-row: 6;
   }
 
   body .hero-actions {
@@ -298,11 +322,15 @@ body .join {
   }
 
   body .hero-visual {
+    grid-column: 1 / 5;
+    grid-row: 2;
     width: 82vw;
-    margin: 35px auto 0;
+    margin: 0 auto 52px;
   }
 
   body .hero-foot {
+    grid-column: 1 / 5;
+    grid-row: 7;
     position: relative;
     left: auto;
     right: auto;
@@ -711,7 +739,7 @@ body.dark-mode .hero-visual::before {
 }
 
 body.dark-mode .hero-visual .orbit {
-  border-color: rgba(243,240,232,.55);
+  border-color: rgba(205,205,205,.48);
 }
 
 body.dark-mode .hero-visual .visual-label {
@@ -720,7 +748,7 @@ body.dark-mode .hero-visual .visual-label {
 }
 
 body.dark-mode .hero-visual .orbit-two {
-  border-color: rgba(243,240,232,.55);
+  border-color: rgba(205,205,205,.48);
 }
 
 body.dark-mode .hero-foot .line {
@@ -1138,13 +1166,34 @@ emph {
   margin-bottom: 7vh;
 }
 
+@property --square-draw {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0turn;
+}
+
 .hero-visual::before {
   content: '';
   position: absolute;
   width: 82%;
   height: 82%;
-  border: 1px solid var(--ink);
+  padding: 1px;
+  background: conic-gradient(
+    from -45deg,
+    currentColor 0turn var(--square-draw),
+    transparent var(--square-draw) 1turn
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
   transform: rotate(45deg);
+  animation: square-draw 2.4s ease-in-out .25s forwards;
+}
+
+@keyframes square-draw {
+  from { --square-draw: 0turn; }
+  to { --square-draw: 1turn; }
 }
 
 .hero-visual img {
@@ -1155,19 +1204,47 @@ emph {
   z-index: 1;
 }
 
+@property --orbit-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
 .orbit {
   position: absolute;
-  border: 1px dashed rgba(22,22,22,.55);
+  top: 50%;
+  left: 50%;
+  border: 1px dashed rgba(22,22,22,.28);
   border-radius: 50%;
-  width: 110%;
-  height: 36%;
-  transform: rotate(-28deg);
+  width: calc(110% - 10% * abs(sin(var(--orbit-angle))));
+  height: max(2px, calc(36% * abs(cos(var(--orbit-angle)))));
+  transform: translate(-50%, -50%) rotate(calc(var(--orbit-angle) - 28deg));
+  opacity: 0;
+  animation: orbit-fade-in .8s ease-in 2.65s forwards,
+    orbit-spin-one 32s ease-in-out .45s infinite;
 }
 
 .orbit-two {
-  width: 95%;
-  height: 26%;
-  transform: rotate(58deg);
+  width: calc(95% - 7% * abs(sin(var(--orbit-angle))));
+  height: max(2px, calc(26% * abs(cos(var(--orbit-angle)))));
+  transform: translate(-50%, -50%) rotate(calc(var(--orbit-angle) + 58deg));
+  animation: orbit-fade-in .8s ease-in 2.65s forwards,
+    orbit-spin-two 26s ease-in-out .45s infinite;
+}
+
+@keyframes orbit-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes orbit-spin-one {
+  from { --orbit-angle: 0deg; }
+  to { --orbit-angle: 360deg; }
+}
+
+@keyframes orbit-spin-two {
+  from { --orbit-angle: 0deg; }
+  to { --orbit-angle: -360deg; }
 }
 
 .visual-label {
@@ -1521,6 +1598,16 @@ h2 {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .hero-visual::before {
+    --square-draw: 1turn;
+    animation: none;
+  }
+
+  .hero-visual .orbit {
+    opacity: 1;
+    animation: none;
+  }
+
   .discipline summary b,
   .discipline-panel,
   .discipline-panel > p,
@@ -1961,6 +2048,7 @@ h2 {
 
   .hero-copy {
     grid-column: 1 / 5;
+    grid-row: 2;
   }
 
   .hero-copy .eyebrow {
@@ -1969,9 +2057,9 @@ h2 {
 
   .hero-visual {
     grid-column: 1 / 5;
-    grid-row: 2;
+    grid-row: 1;
     width: 88vw;
-    margin: 35px auto 20px;
+    margin: 0 auto 30px;
   }
 
   .hero-lede {
@@ -2188,7 +2276,9 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: clamp(30px, 15vw, 68px);
+    font-size: clamp(34px, 16vw, 76px);
+    line-height: .68;
+    height: clamp(130px, 43vw, 170px);
     text-align: center;
     margin-bottom: 15px;
   }
@@ -2205,8 +2295,14 @@ h2 {
   }
 
   .hero-mechatronics {
-    font-size: .64em;
-    width: min(13ch, calc(100vw - 48px));
+    font-size: clamp(28px, 9.5vw, 54px);
+    width: min(100%, calc(100vw - 32px));
+    box-sizing: border-box;
+    overflow: visible;
+    justify-content: center;
+    letter-spacing: -.06em;
+    transform: scaleY(1.15);
+    transform-origin: center;
   }
 
   .hero-mechanical {
@@ -2233,12 +2329,11 @@ h2 {
 
   body .hero h1 + .hero-subtitle {
     margin-top: 0;
-    margin-bottom: 110px;
+    margin-bottom: 30px;
   }
 
   body .hero-visual {
     width: 72vw;
-    margin-top: 24px;
   }
 }
 

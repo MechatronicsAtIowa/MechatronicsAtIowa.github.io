@@ -32,7 +32,10 @@ document.querySelectorAll('[data-type-text]').forEach((typedText) => {
   const text = typedText.dataset.typeText;
   const typewriter = typedText.parentElement;
   const delay = Number(typewriter.dataset.typeDelay || 0);
-  const reducedMotion = window.matchMedia('(max-width: 700px), (prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.matchMedia('(max-width: 700px)').matches;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const typingSpeed = isMobile ? 45 : 75;
+  const startDelay = isMobile ? Math.round(delay * .55) : delay;
 
   const complete = () => {
     typedText.textContent = text;
@@ -54,13 +57,13 @@ document.querySelectorAll('[data-type-text]').forEach((typedText) => {
       return;
     }
 
-    window.setTimeout(typeNextCharacter, 75);
+    window.setTimeout(typeNextCharacter, typingSpeed);
   };
 
   const startTyping = () => window.setTimeout(() => {
     typewriter.classList.add('is-typing');
     typeNextCharacter();
-  }, delay);
+  }, startDelay);
 
   if (document.fonts) {
     document.fonts.ready.then(startTyping);
