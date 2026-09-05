@@ -31,11 +31,16 @@ window.addEventListener('scroll', updateHeader, { passive: true });
 document.querySelectorAll('[data-type-text]').forEach((typedText) => {
   const text = typedText.dataset.typeText;
   const typewriter = typedText.parentElement;
-  const delay = Number(typewriter.dataset.typeDelay || 0);
   const isMobile = window.matchMedia('(max-width: 700px)').matches;
+  const delay = Number(typewriter.dataset.typeDelay || 0);
+  const mobileDelay = Number(typewriter.dataset.typeMobileDelay);
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const typingSpeed = isMobile ? 45 : 75;
-  const startDelay = isMobile ? Math.round(delay * .55) : delay;
+  const startDelay = isMobile && Number.isFinite(mobileDelay)
+    ? mobileDelay
+    : isMobile
+      ? Math.round(delay * .55)
+      : delay;
 
   const complete = () => {
     typedText.textContent = text;
