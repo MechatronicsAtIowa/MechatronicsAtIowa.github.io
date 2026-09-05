@@ -1202,6 +1202,13 @@ emph {
   object-fit: contain;
   filter: drop-shadow(5px 10px 0 rgba(148,134,5,.185));
   z-index: 1;
+  opacity: 0;
+  animation: logo-fade-in .8s ease-in .15s forwards;
+}
+
+@keyframes logo-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @property --orbit-angle {
@@ -1636,6 +1643,11 @@ h2 {
   }
 
   .hero-visual .orbit {
+    opacity: 1;
+    animation: none;
+  }
+
+  .hero-visual img {
     opacity: 1;
     animation: none;
   }
