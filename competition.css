@@ -200,7 +200,7 @@
   color: #5d5950;
   font-size: 14px;
   line-height: 1.45;
-  margin: 0 0 18px;
+  margin: 0 0 32px;
 }
 
 .team-reference img {
@@ -229,6 +229,7 @@
 
   .competition-section-title {
     margin-top: 28px;
+    padding-left: 0;
   }
 
   .competition-section-description {
@@ -429,9 +430,10 @@
   position: absolute;
   inset: 7%;
   border: 1px solid var(--yellow);
+  background-color: rgba(255, 205, 0, .1);
   background-image:
-    linear-gradient(rgba(255, 205, 0, .18) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 205, 0, .18) 1px, transparent 1px);
+    linear-gradient(rgba(255, 205, 0, .35) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 205, 0, .35) 1px, transparent 1px);
   background-size: 29px 29px;
 }
 
@@ -598,7 +600,7 @@
 
 .route-local {
   grid-column: 4 / 8;
-  background: #b08a00;
+  background: rgb(255, 205, 0);
 }
 
 .route-china {
@@ -909,10 +911,15 @@ body.dark-mode .competition-video-intro {
 
 body.dark-mode .route-card p:not(.eyebrow),
 body.dark-mode .roles-heading > p,
+body.dark-mode .competition-section-description,
 body.dark-mode .role-card p,
 body.dark-mode .build-lab-copy > p:last-child,
 body.dark-mode .team-reference-copy {
   color: #d6d1c7;
+}
+
+body.dark-mode .source-links span {
+  color: #f3f0e8;
 }
 
 body.dark-mode .role-grid {
@@ -1297,7 +1304,11 @@ body.dark-mode .competition-header.scrolled {
   }
 
   .competition-hero-copy > p:last-child {
-    font-size: 15px;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    padding-right: 1rem;
+    font-size: 14px;
   }
 
   .arena-diagram {

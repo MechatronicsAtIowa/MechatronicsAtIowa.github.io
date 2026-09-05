@@ -57,7 +57,7 @@ body .join {
 .competition-photo-group img {
   display: block;
   width: 260px;
-  height: 165px;
+  height: 140px;
   object-fit: cover;
   border: 1px solid rgba(244,240,232,.3);
 }
@@ -277,12 +277,18 @@ body .join {
     display: flex;
     flex-direction: column;
     min-height: 0;
-    padding-bottom: 42px;
+    padding-top: 104px;
+    padding-bottom: 78px;
   }
 
   body .hero-copy {
     width: 100%;
     padding-bottom: 0;
+  }
+
+  body .hero-copy .eyebrow {
+    text-align: center;
+    margin-bottom: 170px;
   }
 
   body .hero-actions {
@@ -306,6 +312,12 @@ body .join {
     padding-top: 16px;
     border-top: 1px solid var(--ink);
     justify-content: space-between;
+  }
+
+  body .hero-actions .text-link {
+    position: static;
+    padding-right: 0;
+    background: none;
   }
 
   body .other-photo-grid {
@@ -540,6 +552,10 @@ body.dark-mode .site-nav .nav-cta:focus-visible {
 
 body.dark-mode .site-footer {
   background: #0e1011;
+  color: #f3f0e8;
+}
+
+body.dark-mode .site-footer p {
   color: #f3f0e8;
 }
 
@@ -2172,8 +2188,9 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: clamp(30px, 15vw, 90px);
+    font-size: clamp(30px, 15vw, 68px);
     text-align: center;
+    margin-bottom: 15px;
   }
 
   body .hero h1 > br {
@@ -2182,8 +2199,9 @@ h2 {
 
   .hero-iowa-line {
     display: flex;
-    align-items: baseline;
-    gap: .18em;
+    flex-direction: column;
+    gap: .08em;
+    align-items: center;
   }
 
   .hero-mechatronics {
@@ -2196,11 +2214,21 @@ h2 {
   }
 
   .iowa-wordmark {
-    font-size: .84em;
+    font-size: 1em;
   }
 
   body .hero-subtitle {
     text-align: center;
+  }
+
+  body .hero h1 + .hero-subtitle {
+    margin-top: 0;
+    margin-bottom: 110px;
+  }
+
+  body .hero-visual {
+    width: 72vw;
+    margin-top: 24px;
   }
 }
 
