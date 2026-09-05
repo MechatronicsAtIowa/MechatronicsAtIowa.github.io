@@ -506,6 +506,260 @@ body .join {
   --display: 'Space Grotesk', sans-serif;
 }
 
+body.dark-mode .site-header {
+  background: #17191b;
+  color: #f3f0e8;
+  box-shadow: 0 1px 0 rgba(243,240,232,.2);
+}
+
+body.dark-mode .site-header .brand b {
+  color: #ffd447;
+}
+
+body.dark-mode .site-nav {
+  background: transparent;
+  color: #f3f0e8;
+}
+
+body.dark-mode .site-nav .nav-cta {
+  background: #ffcd00;
+  color: #161616;
+}
+
+body.dark-mode .site-nav .nav-cta:hover,
+body.dark-mode .site-nav .nav-cta:focus-visible {
+  background: #ffe066;
+}
+
+@media (max-width: 700px) {
+  body.dark-mode .site-nav.open {
+    background: rgba(23,25,27,.96);
+    box-shadow: 0 8px 20px rgba(0,0,0,.24);
+  }
+}
+
+body.dark-mode .site-footer {
+  background: #0e1011;
+  color: #f3f0e8;
+}
+
+body.dark-mode .site-footer .brand b {
+  color: #ffd447;
+}
+
+body.dark-mode .site-footer .footer-link {
+  color: #d6d1c7;
+}
+
+.site-footer {
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+  justify-content: center;
+  align-items: center;
+  gap: clamp(24px, 5vw, 82px);
+}
+
+.site-footer .theme-toggle {
+  margin-left: 0;
+}
+
+.site-footer p {
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .site-footer {
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+    gap: 16px;
+  }
+
+  .site-footer .brand,
+  .site-footer p {
+    grid-column: auto;
+  }
+
+  .site-footer p {
+    text-align: center;
+  }
+
+  .site-footer .footer-link {
+    grid-column: auto;
+    grid-row: auto;
+    text-align: center;
+  }
+
+  .site-footer .theme-toggle {
+    display: none;
+  }
+}
+
+body.dark-mode .join {
+  background-color: #111315;
+  background-image: linear-gradient(rgba(8,9,10,.94), rgba(22,22,20,.94)),
+    url('Content/Other Team_Comp Photos/VisionDemo.gif');
+  color: #f3f0e8;
+}
+body.dark-mode .site-footer .brand img {
+  filter: brightness(0) invert(1);
+}
+
+body.dark-mode .join-copy {
+  background-color: rgba(255,212,71,.14);
+  color: #e7e2d8;
+}
+
+body.dark-mode .sponsors {
+  background-color: #1d2022;
+  background-image: linear-gradient(rgba(29,32,34,.9), rgba(29,32,34,.9)),
+    url('Content/Misc Photos/BlockI.jpg');
+  color: #f3f0e8;
+}
+
+body.dark-mode .sponsors .section-index {
+  background: #ffd447;
+  color: #161616;
+  --badge-accent: #f3f0e8;
+}
+
+body.dark-mode .sponsor-copy .eyebrow,
+body.dark-mode .sponsor-copy h2 em {
+  color: #ffd447;
+}
+
+body.dark-mode .sponsor-body {
+  border-color: rgba(243,240,232,.24);
+  background: rgba(17,19,21,.35);
+}
+
+body.dark-mode .sponsor-body > p,
+body.dark-mode .sponsor-body .arrow-link {
+  color: #e2ddd3;
+}
+
+body.dark-mode .sponsor-note {
+  border-color: rgba(243,240,232,.24);
+  color: #d1ccc2;
+}
+
+body.dark-mode .sponsor-note span {
+  color: #aaa69d;
+}
+
+body.dark-mode .hero {
+  color: #f3f0e8;
+  background-color: #17191b;
+  background-image: linear-gradient(rgba(243,240,232,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(243,240,232,.08) 1px, transparent 1px);
+}
+
+body.dark-mode .hero .hero-lede,
+body.dark-mode .hero .eyebrow {
+  color: #c9c5bb;
+}
+
+body.dark-mode .intro {
+  color: #f3f0e8;
+  background-image: linear-gradient(rgba(23,25,27,.88), rgba(23,25,27,.88)),
+    url('Content/Misc Photos/Electronics Session.jpg');
+}
+
+body.dark-mode .intro-body p,
+body.dark-mode .intro-body .arrow-link {
+  color: #d6d1c7;
+}
+
+body.dark-mode .intro-body {
+  background: rgba(255,212,71,.12);
+}
+
+body.dark-mode .hero h1 em,
+body.dark-mode .intro-heading h2 span,
+body.dark-mode .other-views-heading h2 em {
+  color: #ffd447;
+}
+
+body.dark-mode .hero-actions .button-primary {
+  background: #ffd447;
+  border-color: #161616;
+  color: #161616;
+}
+
+body.dark-mode .iowa-wordmark {
+  -webkit-text-stroke-color: #161616;
+}
+
+body.dark-mode .hero-visual::before {
+  border-color: rgba(243,240,232,.72);
+}
+
+body.dark-mode .hero-visual .orbit {
+  border-color: rgba(243,240,232,.55);
+}
+
+body.dark-mode .hero-visual .visual-label {
+  background: #17191b;
+  color: #f3f0e8;
+}
+
+body.dark-mode .hero-visual .orbit-two {
+  border-color: rgba(243,240,232,.55);
+}
+
+body.dark-mode .hero-foot .line {
+  border-color: rgba(243,240,232,.72);
+}
+
+body.dark-mode .other-views {
+  color: #f3f0e8;
+  background-color: #202326;
+  background-image: linear-gradient(rgba(32,35,38,.9), rgba(32,35,38,.9)),
+    url('Content/Other Team_Comp Photos/Jumping Infantry.gif');
+}
+
+body.dark-mode .other-views-lede {
+  color: #d6d1c7;
+}
+
+body.dark-mode .competition-preview {
+  background-image: linear-gradient(rgba(12,13,14,.88), rgba(12,13,14,.88)),
+    url('https://rm-static.djicdn.com/tem/12037/c4bf068a74e941567077772045597339.jpg');
+}
+
+body.dark-mode .field-collage {
+  background: #252a2d;
+  color: #f3f0e8;
+}
+
+body.dark-mode .field-collage-body p {
+  color: #d6d1c7;
+}
+
+body.dark-mode .join {
+  background-image: linear-gradient(rgba(8,9,10,.94), rgba(22,22,20,.94)),
+    url('Content/Other Team_Comp Photos/VisionDemo.gif');
+  color: #f3f0e8;
+}
+
+body.dark-mode .join-copy {
+  background-color: rgba(255,212,71,.14);
+  color: #e7e2d8;
+}
+
+body.dark-mode .join-detail {
+  color: #bdb8ad;
+}
+
+body.dark-mode .join-detail strong {
+  color: #f3f0e8;
+}
+
+body.dark-mode .theme-toggle {
+  color: #f3f0e8;
+  border-color: #f3f0e8;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -670,6 +924,22 @@ a {
   font: 500 10px var(--mono);
 }
 
+.theme-toggle {
+  border: 1px solid var(--ink);
+  padding: 8px 10px;
+  background: transparent;
+  color: var(--ink);
+  font: 500 9px var(--mono);
+  letter-spacing: .08em;
+  cursor: pointer;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  background: var(--yellow);
+  color: var(--ink);
+}
+
 .section-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -796,6 +1066,11 @@ emph {
   align-items: center;
   gap: 30px;
   margin-top: 38px;
+
+.hero-actions .button-primary {
+  color: #161616;
+  border-color: #161616;
+}
 }
 
 .button {
@@ -1549,10 +1824,15 @@ h2 {
 .site-footer .brand img {
   width: 28px;
   height: 28px;
+  filter: brightness(0);
 }
 
 .site-footer .brand {
   font-size: 9px;
+}
+
+.site-footer .theme-toggle {
+  margin-left: auto;
 }
 
 .site-footer p {
@@ -1618,6 +1898,11 @@ h2 {
     padding: 20px 6vw;
   }
 
+  .theme-toggle {
+    position: absolute;
+    left: 6vw;
+  }
+
   .site-nav {
     display: none;
     position: absolute;
@@ -1654,12 +1939,16 @@ h2 {
   .hero {
     min-height: 770px;
     height: auto;
-    padding-top: 140px;
+    padding-top: 86px;
     padding-bottom: 95px;
   }
 
   .hero-copy {
     grid-column: 1 / 5;
+  }
+
+  .hero-copy .eyebrow {
+    margin-bottom: 52px;
   }
 
   .hero-visual {
@@ -1813,14 +2102,29 @@ h2 {
   }
 
   .site-footer {
-    padding: 22px 6vw;
-    flex-wrap: wrap;
-    gap: 18px;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 30px 6vw 32px;
+    gap: 14px;
   }
 
   .site-footer p {
-    order: 3;
-    width: 100%;
+    order: 0;
+    color: rgba(22,22,22,.72);
+    line-height: 1.4;
+  }
+
+  .site-footer .brand,
+  .site-footer .footer-link {
+    max-width: 100%;
+  }
+
+  .site-footer .footer-link {
+    padding-top: 4px;
+  }
+
+  .site-footer .theme-toggle {
+    margin-left: 0;
   }
 }
 
@@ -1889,6 +2193,10 @@ h2 {
 
   .hero-mechanical {
     justify-content: center;
+  }
+
+  .iowa-wordmark {
+    font-size: .84em;
   }
 
   body .hero-subtitle {
@@ -1992,4 +2300,32 @@ body .other-views-lede {
   body .intro-body {
     text-align: center;
   }
+}
+
+body.dark-mode .site-header {
+  background: transparent;
+  color: #f3f0e8;
+  box-shadow: none;
+}
+
+body.dark-mode .site-nav {
+  background: transparent;
+  color: #f3f0e8;
+}
+
+body.dark-mode .site-nav.open {
+  background: rgba(23,25,27,.96);
+  box-shadow: 0 8px 20px rgba(0,0,0,.24);
+}
+
+@media (max-width: 700px) {
+  body.dark-mode .site-nav.open {
+    background: rgba(23,25,27,.96);
+    box-shadow: 0 8px 20px rgba(0,0,0,.24);
+  }
+}
+
+body.dark-mode .site-header.scrolled {
+  background: #17191b;
+  box-shadow: 0 1px 0 rgba(243,240,232,.2);
 }

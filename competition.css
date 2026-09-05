@@ -90,7 +90,7 @@
   object-position: center;
   padding: 12px;
   background: #242424;
-  filter: grayscale(1) sepia(.9) saturate(5) hue-rotate(350deg) brightness(1.05) contrast(1.08);
+  filter: grayscale(1) sepia(.9) saturate(5) hue-rotate(350deg) brightness(.72) contrast(1.08);
 }
 
 @media (max-width: 700px) {
@@ -598,7 +598,7 @@
 
 .route-local {
   grid-column: 4 / 8;
-  background: var(--yellow);
+  background: #b08a00;
 }
 
 .route-china {
@@ -689,7 +689,7 @@
   grid-column: 1 / 4;
   background: var(--yellow);
   color: var(--ink);
-  --badge-accent: var(--ink);
+  --badge-accent: #fff;
 }
 
 .build-lab-copy {
@@ -877,6 +877,102 @@
 
 .field-viewer-copy h2 em {
   color: var(--yellow);
+}
+
+body.dark-mode .route-section,
+body.dark-mode .build-lab {
+  background: #1b1e21;
+  color: #f3f0e8;
+}
+
+body.dark-mode .route-local,
+body.dark-mode .route-china {
+  background: #24282c;
+}
+
+body.dark-mode .roles-section {
+  background: #2b3034;
+  color: #f3f0e8;
+}
+
+body.dark-mode .build-lab {
+  background: #202428;
+}
+
+body.dark-mode .field-viewer-section {
+  background: #15181b;
+}
+
+body.dark-mode .competition-video-intro {
+  background: #202326;
+}
+
+body.dark-mode .route-card p:not(.eyebrow),
+body.dark-mode .roles-heading > p,
+body.dark-mode .role-card p,
+body.dark-mode .build-lab-copy > p:last-child,
+body.dark-mode .team-reference-copy {
+  color: #d6d1c7;
+}
+
+body.dark-mode .role-grid {
+  background: #0d0f10;
+  border-color: #0d0f10;
+}
+
+body.dark-mode .role-card,
+body.dark-mode .role-card:nth-child(2n) {
+  background: #252a2d;
+}
+
+body.dark-mode .role-code,
+body.dark-mode .field-collage figcaption,
+body.dark-mode .photo-credit,
+body.dark-mode .team-reference > p:last-child {
+  color: #ffd447;
+}
+
+body.dark-mode .competition-join {
+  background: #9a7800;
+  color: #f3f0e8;
+}
+
+body.dark-mode .competition-role-actions .button-primary {
+  background: #b08a00;
+  border-color: #b08a00;
+  color: #161616;
+}
+
+body.dark-mode .competition-role-actions .button-primary:hover,
+body.dark-mode .competition-role-actions .button-primary:focus-visible {
+  background: #c39b14;
+  border-color: #c39b14;
+}
+
+body.dark-mode .competition-join .button-primary {
+  background: #ffcd00;
+  border-color: #161616;
+  color: #161616;
+}
+
+body.dark-mode .competition-join .button-primary:hover,
+body.dark-mode .competition-join .button-primary:focus-visible {
+  background: #ffe066;
+  border-color: #161616;
+}
+
+body.dark-mode .competition-join h2 em,
+body.dark-mode .competition-join > div:nth-child(2) p,
+body.dark-mode .source-note {
+  color: #d6d1c7;
+}
+
+body.dark-mode .source-note {
+  border-color: rgba(243,240,232,.25);
+}
+
+body.dark-mode .competition-header.scrolled {
+  color: #f3f0e8;
 }
 
 .field-viewer-copy > p:not(.eyebrow) {

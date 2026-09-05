@@ -1,6 +1,25 @@
 const menuToggle = document.querySelector('.menu-toggle');
 const siteNav = document.querySelector('.site-nav');
 const siteHeader = document.querySelector('.site-header');
+const themeToggle = document.querySelector('.theme-toggle');
+
+const setDarkMode = (enabled) => {
+  document.body.classList.toggle('dark-mode', enabled);
+  themeToggle.textContent = enabled ? 'LIGHT' : 'DARK';
+  themeToggle.setAttribute('aria-label', enabled ? 'Disable dark mode' : 'Enable dark mode');
+  themeToggle.setAttribute('aria-pressed', String(enabled));
+};
+
+if (themeToggle) {
+  const savedTheme = sessionStorage.getItem('dark-mode');
+  setDarkMode(savedTheme === 'true');
+
+  themeToggle.addEventListener('click', () => {
+    const enabled = !document.body.classList.contains('dark-mode');
+    setDarkMode(enabled);
+    sessionStorage.setItem('dark-mode', String(enabled));
+  });
+}
 
 const updateHeader = () => {
   siteHeader.classList.toggle('scrolled', window.scrollY > 40);
