@@ -1006,6 +1006,19 @@ a {
   background-size: 42px 42px;
 }
 
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: -10% -5% -5% -5%;
+  z-index: 0;
+  background: linear-gradient(270deg, rgba(244,240,232,.98) 0%, rgba(244,240,232,.48) 28%, rgba(244,240,232,.08) 62%),
+    url('Content/CAD Photos/RoboRender.png') 78% center / cover no-repeat;
+  filter: none;
+  opacity: .3;
+  transform: scale(1.04);
+  pointer-events: none;
+}
+
 .hero-copy {
   grid-column: 1 / 7;
   align-self: center;
