@@ -288,6 +288,17 @@ body .join {
     padding-bottom: 0;
   }
 
+  body .hero-copy > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  body .hero-visual,
+  body .hero-foot {
+    position: relative;
+    z-index: 1;
+  }
+
   body .hero-copy .eyebrow {
     grid-column: 1 / 5;
     grid-row: 1;
@@ -743,7 +754,7 @@ body.dark-mode .hero-visual .orbit {
 }
 
 body.dark-mode .hero-visual .visual-label {
-  background: #17191b;
+  background: transparent;
   color: #f3f0e8;
 }
 
@@ -911,6 +922,7 @@ a {
 
 .hero-at {
   font-size: .62em;
+  color: #ffcd00;
   width: 2ch;
 }
 
@@ -1014,15 +1026,53 @@ a {
   background: linear-gradient(270deg, rgba(244,240,232,.98) 0%, rgba(244,240,232,.48) 28%, rgba(244,240,232,.08) 62%),
     url('Content/CAD Photos/RoboRender.png') 78% center / cover no-repeat;
   filter: none;
-  opacity: .3;
+  opacity: .42;
   transform: scale(1.04);
   pointer-events: none;
+}
+
+@media (max-width: 700px) {
+  .hero::before {
+    opacity: .42;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 1050px) {
+  .hero::before {
+    opacity: .12;
+  }
+}
+
+@media (max-width: 1050px) {
+  h1 em .hero-at,
+  h1 em .iowa-wordmark {
+    color: #ffcd00 !important;
+    -webkit-text-fill-color: #ffcd00;
+    opacity: 1 !important;
+    text-shadow: none;
+  }
+
+  .iowa-wordmark {
+    -webkit-text-stroke: 1px #161616;
+  }
+
+  .season-label,
+  .hero-actions .button-primary {
+    opacity: 1;
+  }
+
+  .hero-actions .button-primary {
+    background: #ffcd00;
+    border-color: #161616;
+    color: #161616;
+  }
 }
 
 .hero-copy {
   grid-column: 1 / 7;
   align-self: center;
   z-index: 1;
+  opacity: 1;
   padding-bottom: 8vh;
 }
 
@@ -1069,7 +1119,7 @@ h1 + .hero-subtitle {
 .season-label {
   display: inline-flex;
   align-items: center;
-  color: #c2a12a;
+  color: #ffffff;
   font-family: 'Rajdhani', sans-serif;
   font-size: .78em;
   font-weight: 700;
@@ -1102,6 +1152,11 @@ h1 em,
 h2 em {
   font-style: normal;
   color: #b98b00;
+}
+
+h1 em .hero-at,
+h1 em .iowa-wordmark {
+  color: #ffcd00;
 }
 
 emph {
@@ -1306,7 +1361,7 @@ emph {
   z-index: 2;
   font: 500 9px var(--mono);
   letter-spacing: .12em;
-  background: var(--paper);
+  background: transparent;
   padding: 5px 7px;
 }
 
@@ -2424,7 +2479,7 @@ h2 {
 
 @media (max-width: 700px) {
   .iowa-wordmark {
-    -webkit-text-stroke-width: clamp(1px, .6vw, 3px);
+    -webkit-text-stroke-width: 1px;
   }
 }
 
