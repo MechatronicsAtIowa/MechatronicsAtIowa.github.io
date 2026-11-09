@@ -2860,16 +2860,19 @@ h2 {
 .join-detail {
   grid-column: 6 / 11;
   justify-self: center;
-  margin: 16px 0 0;
-  color: #aaa69d;
-  font: 11px/1.7 var(--mono);
-  letter-spacing: .08em;
+  margin: 28px 0 0;
+  padding: 18px 26px;
+  border-top: 2px solid var(--yellow);
+  border-bottom: 2px solid var(--yellow);
+  color: var(--paper);
+  font: 14px/1.8 var(--mono);
+  letter-spacing: .1em;
   text-align: center;
 }
 
 .join-detail strong {
-  color: var(--paper);
-  font-weight: 400;
+  color: var(--yellow);
+  font-weight: 600;
 }
 
 .site-footer {
@@ -3458,7 +3461,7 @@ body.dark-mode .site-header.scrolled {
 .subteams {
   padding: 110px 6vw 125px;
   background:
-    linear-gradient(rgba(128,102,0,.78), rgba(128,102,0,.78)),
+    linear-gradient(rgba(105,84,0,.78), rgba(105,84,0,.78)),
     url('Content/Team Photos/Kickoff(2alt).jpg') center / cover;
   color: var(--ink);
 }
@@ -3483,6 +3486,15 @@ body.dark-mode .site-header.scrolled {
   display: inline-block;
   margin: 0;
   padding: 8px 18px;
+}
+
+.subteams-lede {
+  max-width: 650px;
+  margin: 36px auto 0;
+  color: var(--paper);
+  font-size: 17px;
+  line-height: 1.5;
+  text-align: center;
 }
 
 .subteams h2::before {
@@ -3586,6 +3598,29 @@ body.dark-mode .site-header.scrolled {
   text-decoration: underline;
 }
 
+.subteams-contact {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 14px;
+  margin: 48px auto 0;
+}
+
+.subteams-contact h3 {
+  margin: 0;
+  color: var(--paper);
+  font: 600 13px var(--mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.subteams-contact a {
+  color: var(--paper);
+  font: 500 12px var(--mono);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 body.dark-mode .subteams {
   background:
     linear-gradient(rgba(58,47,0,.84), rgba(58,47,0,.84)),
@@ -3637,6 +3672,17 @@ body.dark-mode .subteam-contact small {
 
   .subteams h2 {
     margin-top: 0;
+  }
+
+  .subteams-lede {
+    margin-top: 28px;
+    font-size: 15px;
+  }
+
+  .subteams-contact {
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    margin-top: 40px;
   }
 
   .subteam-grid {
