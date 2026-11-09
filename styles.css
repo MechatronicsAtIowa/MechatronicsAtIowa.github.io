@@ -537,13 +537,23 @@ body .join {
   }
 
   body .join h2 {
-    grid-column: 2 / 7;
+    grid-column: 3 / 7;
   }
 
   body .join .button {
     grid-column: 8 / 12;
     padding: 21px 28px;
     font-size: 11px;
+  }
+
+  body .join-copy {
+    grid-column: 7 / 11;
+    margin-top: 0;
+  }
+
+  body .join-detail {
+    grid-column: 1 / 13;
+    justify-self: center;
   }
 }
 
@@ -725,6 +735,15 @@ body.dark-mode .intro-body .arrow-link {
   color: #d6d1c7;
 }
 
+body.dark-mode .intro-body p a {
+  color: var(--yellow);
+}
+
+body.dark-mode .intro-body p a:hover,
+body.dark-mode .intro-body p a:focus-visible {
+  color: var(--paper);
+}
+
 body.dark-mode .intro-body {
   background: rgba(255,212,71,.12);
 }
@@ -782,6 +801,7 @@ body.dark-mode .hero-visual::before {
 
 .sponsors-hero h1 {
   margin: 0;
+  font-family: 'Orbitron', sans-serif;
   font-size: clamp(64px, 10vw, 140px);
   line-height: .9;
   letter-spacing: -.08em;
@@ -2300,6 +2320,19 @@ h2 {
   color: #4f4c45;
 }
 
+.intro-body p a {
+  color: #806600;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.intro-body p a:hover,
+.intro-body p a:focus-visible {
+  color: var(--ink);
+}
+
 .arrow-link {
   display: inline-block;
   margin-top: 24px;
@@ -2785,11 +2818,12 @@ h2 {
 .join {
   background: var(--ink);
   color: var(--paper);
-  padding: 135px 0 120px;
+  padding: 88px 0 78px;
 }
 
 .join-inner {
   position: relative;
+  align-items: center;
 }
 
 .join .eyebrow {
@@ -2799,7 +2833,7 @@ h2 {
 
 .join h2 {
   grid-column: 4 / 9;
-  margin-top: 28px;
+  margin-top: 0;
   color: var(--paper);
 }
 
@@ -2809,8 +2843,8 @@ h2 {
 
 .join-copy {
   grid-column: 9 / 12;
-  margin-top: 42px;
-  padding: 30px;
+  margin-top: 20px;
+  padding: 22px 24px;
   background-color: #eec13c4d;
   color: #fffcf6;
   font-size: 16px;
@@ -2824,12 +2858,13 @@ h2 {
 }
 
 .join-detail {
-  grid-column: 9 / 12;
-  align-self: end;
-  margin: 18px 0 0;
+  grid-column: 6 / 11;
+  justify-self: center;
+  margin: 16px 0 0;
   color: #aaa69d;
-  font: 10px/1.6 var(--mono);
+  font: 11px/1.7 var(--mono);
   letter-spacing: .08em;
+  text-align: center;
 }
 
 .join-detail strong {
@@ -2875,13 +2910,15 @@ h2 {
 }
 
 .join-actions {
-  grid-column: 8 / 12;
-  justify-self: start;
+  grid-column: 2 / 12;
+  justify-self: center;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-  margin-top: 18px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  margin-top: 24px;
 }
 
 .join-actions .button {
@@ -2892,6 +2929,8 @@ h2 {
 @media (max-width: 700px) {
   .join-actions {
     grid-column: 1 / 5;
+    flex-direction: column;
+    align-items: flex-start;
     margin-top: 10px;
   }
 }
@@ -3414,4 +3453,199 @@ body.dark-mode .site-nav.open {
 body.dark-mode .site-header.scrolled {
   background: #17191b;
   box-shadow: 0 1px 0 rgba(243,240,232,.2);
+}
+
+.subteams {
+  padding: 110px 6vw 125px;
+  background:
+    linear-gradient(rgba(128,102,0,.78), rgba(128,102,0,.78)),
+    url('Content/Team Photos/Kickoff(2alt).jpg') center / cover;
+  color: var(--ink);
+}
+
+.subteams-header {
+  display: block;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.subteams-header .section-index {
+  margin-bottom: 48px;
+}
+
+.subteams-header > div:last-child {
+  text-align: center;
+}
+
+.subteams h2 {
+  position: relative;
+  z-index: 0;
+  display: inline-block;
+  margin: 0;
+  padding: 8px 18px;
+}
+
+.subteams h2::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  background: var(--yellow);
+  transform: translateX(-50%);
+}
+
+.subteams h2 em {
+  color: #806600;
+  font-style: normal;
+}
+
+.subteam-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0 24px;
+  max-width: 1200px;
+  margin: 80px auto 0;
+}
+
+.subteam {
+  min-height: 330px;
+  box-sizing: border-box;
+  padding: 28px 24px 24px;
+  border-top: 6px solid var(--yellow);
+  background: #f3f0e8;
+  box-shadow: 0 8px 0 rgba(22,22,22,.12);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.subteam:nth-child(2) {
+  border-top-color: #b7b7b7;
+}
+
+.subteam:nth-child(3) {
+  border-top-color: #806600;
+}
+
+.subteam:nth-child(4) {
+  border-top-color: var(--ink);
+}
+
+.subteam:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 13px 0 rgba(22,22,22,.12);
+}
+
+.subteam h3 {
+  margin: 0 0 16px;
+  font-size: 19px;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+}
+
+.subteam p {
+  margin: 0;
+  color: #4f4c45;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.subteam-contact {
+  display: grid;
+  gap: 3px;
+  margin-top: 34px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(22,22,22,.25);
+}
+
+.subteam-contact span,
+.subteam-contact small {
+  font: 500 10px var(--mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.subteam-contact span {
+  margin-bottom: 5px;
+  color: #806600;
+}
+
+.subteam-contact strong {
+  font-size: 15px;
+}
+
+.subteam-contact small {
+  color: #5d5950;
+}
+
+.subteam-contact a {
+  overflow-wrap: anywhere;
+  color: inherit;
+  font: 11px var(--mono);
+  text-decoration: underline;
+}
+
+body.dark-mode .subteams {
+  background:
+    linear-gradient(rgba(58,47,0,.84), rgba(58,47,0,.84)),
+    url('Content/Team Photos/Kickoff(2alt).jpg') center / cover;
+  color: var(--paper);
+}
+
+body.dark-mode .subteams h2 em {
+  color: var(--yellow);
+}
+
+body.dark-mode .subteam {
+  background: #2a2d30;
+  box-shadow: 0 8px 0 rgba(0,0,0,.24);
+}
+
+body.dark-mode .subteam:hover {
+  box-shadow: 0 13px 0 rgba(0,0,0,.24);
+}
+
+body.dark-mode .subteam p {
+  color: #d6d1c7;
+}
+
+body.dark-mode .subteam-contact {
+  border-color: rgba(243,240,232,.3);
+}
+
+body.dark-mode .subteam-contact span {
+  color: var(--yellow);
+}
+
+body.dark-mode .subteam-contact small {
+  color: #d6d1c7;
+}
+
+@media (max-width: 700px) {
+  .subteams {
+    padding: 80px 6vw 90px;
+  }
+
+  .subteams-header {
+    display: block;
+  }
+
+  .subteams-header .section-index {
+    margin-bottom: 48px;
+  }
+
+  .subteams h2 {
+    margin-top: 0;
+  }
+
+  .subteam-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 38px 20px;
+    margin-top: 58px;
+  }
+
+  .subteam {
+    min-height: 0;
+  }
 }
