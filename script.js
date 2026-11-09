@@ -83,9 +83,22 @@ menuToggle.addEventListener('click', () => {
 });
 
 document.querySelectorAll('.site-nav a').forEach((link) => {
+  if (link.classList.contains('nav-dropdown-toggle')) return;
+
   link.addEventListener('click', () => {
     siteNav.classList.remove('open');
     menuToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+
+document.querySelectorAll('.nav-dropdown-toggle').forEach((toggle) => {
+  toggle.addEventListener('click', (event) => {
+    if (!window.matchMedia('(max-width: 700px)').matches) return;
+
+    event.preventDefault();
+    const dropdown = toggle.parentElement;
+    const isOpen = dropdown.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
   });
 });
 
